@@ -1,15 +1,13 @@
-function runPyScript(input){
-    var jqXHR = $.ajax({
-        type: "POST",
-        url: "/.py",
-        async: false,
-        data: { param: input }
-    });
 
-    return jqXHR.responseText;
-}
-
-function generatePlainPassword(wordCount) {
+const Generator = (props) => {
+    const englishWords = runPyScript;
+    return (
+        <View>
+            <Text>{englishWords}</Text>
+        </View>
+        
     
-    return password
+    )
 }
+
+export default Generator;
