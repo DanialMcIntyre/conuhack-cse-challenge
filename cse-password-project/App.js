@@ -3,12 +3,25 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
 
-  let pass = "testingpass";
+  //Password string
+  let pass = "abctesting";
 
+  //List of words
+  const listOfWords = ["test", "hello", "wow"]
+
+  //Checks if word from 'word library' exists in password, then removes it to make cracking easier
+  for (const i of listOfWords) {
+    while (pass.includes(i)) {
+      pass = pass.replace(i, 'a')
+    }
+  }
+
+  //Testing variables
   let possibleChars = 92;
   let length = pass.length;
   let keysPerSecond = 1000000000;
 
+  //Calculates time to crack
   let seconds = Math.pow(possibleChars, length) / keysPerSecond;
 
   let minutes = Math.floor(seconds / 60)
@@ -28,6 +41,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Text>{pass}</Text>
       <Text>Years: {years}, Months: {months}, Days: {days}, Hours: {hours}, Minutes: {minutes}, Seconds: {seconds}</Text>
       <StatusBar style="auto" />
     </View>
