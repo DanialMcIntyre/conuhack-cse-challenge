@@ -30,7 +30,7 @@ function generateRandomPassword(passwordLength) {
       }
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <Text>Random Generator</Text>
         <Button onPress={() => regen()} title="generate"></Button>
         <Text>{result}</Text>
         <StatusBar style="auto" />

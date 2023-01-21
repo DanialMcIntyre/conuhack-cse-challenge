@@ -22,7 +22,7 @@ function generateRandomPassword(phraseLength) {
       }
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <Text>PlainText Generator</Text>
         <Button onPress={() => regen()} title="generate"></Button>
         <Text>{result}</Text>
         <StatusBar style="auto" />
