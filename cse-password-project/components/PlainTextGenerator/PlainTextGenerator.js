@@ -1,26 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
-import { loadEnglish } from './english.mjs';
+import { loadEnglish } from '../../english.mjs';
 
 function generateRandomPassword(phraseLength) {
     let english = loadEnglish();
-    let phrase = "";
     let password = "";
-    let random = 1525;
     for (let i = 0; i < phraseLength; i++) {
-        random = Math.random()*1526;
-        password += english[Math.floor(random)][0];
+        let randomWord = Math.random()*1526;
+        password += english[Math.floor(randomWord)];
     }
-    random = Math.floor(Math.random()*1000);
-    
+    let random = Math.floor(Math.random()*1000);
+    password += random;
     return password;
-  }
+}
   
   export default function PlainTextGenerator() {
     const [result, setResult] = useState();
     const regen = () =>{
-          setResult(generateRandomPassword(10));
+          setResult(generateRandomPassword(3));
       }
     return (
       <View style={styles.container}>

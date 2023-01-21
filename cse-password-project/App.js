@@ -3,6 +3,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { registerRootComponent } from 'expo';
 import RandomGenerator from './components/RandomGenerator/RandomGenerator';
+import PlainTextGenerator from './components/PlainTextGenerator/PlainTextGenerator';
 
 function generatePlainPassword(wordCount) {
     response= runPyScript('data to process');
@@ -12,11 +13,11 @@ function generatePlainPassword(wordCount) {
 
 
 export default function App() {
-  const english = loadEnglish();
   return (
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
-      
+      <PlainTextGenerator></PlainTextGenerator>
+      <RandomGenerator></RandomGenerator>
       <StatusBar style="auto" />
     </View>
   );
