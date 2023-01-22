@@ -30,8 +30,8 @@ function generateRandomPassword(passwordLength) {
       }
     return (
       <View style={styles.container}>
-        <Text>Random Generator</Text>
-        <Button onPress={() => regen()} title="generate"></Button>
+        <Text style={{fontFamily: 'Courier New', fontSize: 24}}>Random Generator</Text>
+        <Button onPress={() => regen()} title="Generate!"></Button>
         <Text>{result}</Text>
         <StatusBar style="auto" />
       </View>
@@ -44,5 +44,6 @@ function generateRandomPassword(passwordLength) {
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
+      backgroundColor: '#B9ffff'
     },
   });

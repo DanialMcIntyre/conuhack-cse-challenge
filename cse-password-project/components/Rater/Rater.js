@@ -44,7 +44,6 @@ export default function Rater() {
     const listOfWords = loadEnglish()
 
     const changedPassword = (newText) => {
-      console.log(length);
       setPass(newText);
     }
 
@@ -55,7 +54,6 @@ export default function Rater() {
         const resultArray = inTrie(wordTrie, pass.substring(j, j+i+1), 0);
         if(resultArray[0] == 1) {
           length = length - resultArray[1] + 1;
-          console.log(resultArray);
         }
       }
     }
@@ -82,18 +80,57 @@ export default function Rater() {
     let years = Math.floor(months / 12)
     months = months % 12
 
+    let rating = ""
+    let c = "000000"
+
+    if (length === 0) {
+      rating = ""
+    } else if (years > 16) {
+      rating = "AWESOME"
+      c = "#10eaea"
+    } else if (years > 4) {
+      rating = "PRETTY GOOD"
+      c = "#42ea10"
+    } else if (days > 2) {
+      rating = "OK"
+      c = "#Eadb10"
+    } else {
+      rating = "BAD"
+      c = "#Ea1c10"
+    }
+
     
 
     return (
       <View style={styles.container}><StatusBar style="auto" />
       <TextInput
-        style={{height: 40}}
+        style={{
+          height: 40, 
+          borderWidth: 1,
+          borderColor: '#4d89e2',
+          padding: 10,
+        }}
         onChangeText={newText => changedPassword(newText)}
-        defaultValue={"E"} 
+        placeholder={"Enter your text here"} 
+        name="pass"
       />
-        <Text>{length}</Text>
-        <Text>Years: {years}, Months: {months}, Days: {days}, Hours: {hours}, Minutes: {minutes}, Seconds: {seconds}</Text>
+        <Text></Text>
+        <Text>This password will take: </Text>
+        <Text>Years: {years} </Text>
+        <Text>Months: {months} </Text>
+        <Text> Days: {days} </Text>
+        <Text> Hours: {hours} </Text>
+        <Text> Minutes: {minutes} </Text> 
+        <Text> Seconds: {seconds}</Text>
+        <Text>to crack using the brute force method!</Text>
+        <Text></Text>
+
+        <Text style={{fontFamily: 'Palatino', fontSize: 20}}>OVERALL RATING: </Text>
+        <Text style={{color: c, fontFamily: 'Palatino', fontSize: 30}}>{rating}</Text>
+
         <StatusBar style="auto" />
+
+
       </View>
     );
 
@@ -102,8 +139,11 @@ export default function Rater() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#B9ffff'
   },
+  namer: {
+
+   }
 });

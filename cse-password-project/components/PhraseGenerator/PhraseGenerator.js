@@ -54,8 +54,8 @@ function generatePhrasePassword() {
       }
     return (
       <View style={styles.container}>
-        <Text>Phrase Generator</Text>
-        <Button onPress={() => regen()} title="generate"></Button>
+        <Text style={{fontFamily: 'Courier New', fontSize: 24}}>Phrase Generator</Text>
+        <Button onPress={() => regen()} title="Generate1"></Button>
         <Text>{result}</Text>
         <StatusBar style="auto" />
       </View>
@@ -68,5 +68,6 @@ function generatePhrasePassword() {
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
+      backgroundColor: '#B9ffff'
     },
   });

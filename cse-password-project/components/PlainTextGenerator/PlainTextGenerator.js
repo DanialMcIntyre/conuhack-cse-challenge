@@ -22,8 +22,8 @@ function generatePlainTextPassword(phraseLength) {
       }
     return (
       <View style={styles.container}>
-        <Text>PlainText Generator</Text>
-        <Button onPress={() => regen()} title="generate"></Button>
+        <Text style={{fontFamily: 'Courier New', fontSize: 24}}>Plain Text Generator</Text>
+        <Button onPress={() => regen()} title="Generate!"></Button>
         <Text>{result}</Text>
         <StatusBar style="auto" />
       </View>
@@ -36,5 +36,7 @@ function generatePlainTextPassword(phraseLength) {
       backgroundColor: '#fff',
       alignItems: 'center',
       justifyContent: 'center',
+      fontFamily: 'Courier New',
+      backgroundColor: '#B9ffff'
     },
   });
