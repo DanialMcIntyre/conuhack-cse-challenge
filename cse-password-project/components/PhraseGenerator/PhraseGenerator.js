@@ -14,7 +14,7 @@ function generatePhrasePassword() {
     //SVO A
     let password = "";
     let symbol1 = symbols[Math.floor(Math.random() * 25)]
-    let subjectWord = english[Math.floor(Math.random()*1526)][0]
+    let subjectWord = english[Math.floor(Math.random()*1462)][0]
     let subjectWord1 = subjectWord.slice(0, subjectWord.length / 2)
     let subjectWord2 = subjectWord.slice(subjectWord.length / 2, subjectWord.length)
     password += subjectWord1 + symbol1 + subjectWord2
@@ -26,7 +26,7 @@ function generatePhrasePassword() {
     password += verbWord1 + symbol2 + verbWord2
 
     let symbol3 = symbols[Math.floor(Math.random() * 25)]
-    let objectWord = english[Math.floor(Math.random()*1526)][0];
+    let objectWord = english[Math.floor(Math.random()*1462)][0];
     let objectWord1 = objectWord.slice(0, objectWord.length / 2)
     let objectWord2 = objectWord.slice(objectWord.length / 2, objectWord.length)
     password += objectWord1 + symbol3 + objectWord2

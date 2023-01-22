@@ -7,7 +7,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Rater></Rater>
+      <Generator></Generator>
       <StatusBar style="auto" />
     </View>
   );
