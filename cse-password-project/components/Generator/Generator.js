@@ -2,12 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import RandomGenerator from '../RandomGenerator/RandomGenerator';
 import PlainTextGenerator from '../PlainTextGenerator/PlainTextGenerator';
+import PhraseGenerator from '../PhraseGenerator/PhraseGenerator';
 
 export default function Generator() {
   return (
     <View style={styles.container}>
       <PlainTextGenerator></PlainTextGenerator>
       <RandomGenerator></RandomGenerator>
+      <PhraseGenerator></PhraseGenerator>
       <StatusBar style="auto" />
     </View>
   );

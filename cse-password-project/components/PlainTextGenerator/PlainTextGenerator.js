@@ -3,7 +3,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { loadEnglish } from '../../english.mjs';
 
-function generateRandomPassword(phraseLength) {
+function generatePlainTextPassword(phraseLength) {
     let english = loadEnglish();
     let password = "";
     for (let i = 0; i < phraseLength; i++) {
@@ -18,7 +18,7 @@ function generateRandomPassword(phraseLength) {
   export default function PlainTextGenerator() {
     const [result, setResult] = useState();
     const regen = () =>{
-          setResult(generateRandomPassword(3));
+          setResult(generatePlainTextPassword(3));
       }
     return (
       <View style={styles.container}>
