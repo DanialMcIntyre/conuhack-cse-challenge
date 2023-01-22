@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { loadEnglish } from '../../english.mjs';
+import { Clipboard } from 'react-native';
 
 function generatePlainTextPassword(phraseLength) {
     let english = loadEnglish();
@@ -24,7 +25,7 @@ function generatePlainTextPassword(phraseLength) {
       <View style={styles.container}>
         <Text style={{fontFamily: 'Courier New', fontSize: 24}}>Plain Text Generator</Text>
         <Button onPress={() => regen()} title="Generate!"></Button>
-        <Text>{result}</Text>
+        <Text onPress={() => Clipboard.setString(result)}>{result}</Text>
         <StatusBar style="auto" />
       </View>
     );

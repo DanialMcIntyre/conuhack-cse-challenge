@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
+import { Clipboard } from 'react-native';
 
 function generateRandomPassword(passwordLength) {
     let symbols = [["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -32,7 +33,7 @@ function generateRandomPassword(passwordLength) {
       <View style={styles.container}>
         <Text style={{fontFamily: 'Courier New', fontSize: 24}}>Random Generator</Text>
         <Button onPress={() => regen()} title="Generate!"></Button>
-        <Text>{result}</Text>
+        <Text onPress={() => Clipboard.setString(result)}>{result}</Text>
         <StatusBar style="auto" />
       </View>
     );

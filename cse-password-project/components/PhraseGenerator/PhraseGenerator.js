@@ -5,6 +5,7 @@ import { loadEnglish } from '../../english.mjs';
 import { loadVerbs } from '../../verb.mjs';
 import { loadAdverbs } from '../../adverbs.mjs';
 import { loadSymbols } from '../../symbols.mjs';
+import { Clipboard } from 'react-native';
 
 function generatePhrasePassword() {
     const english = loadEnglish();
@@ -32,31 +33,24 @@ function generatePhrasePassword() {
     password += objectWord1 + symbol3 + objectWord2
 
     let symbol4 = symbols[Math.floor(Math.random() * 25)]
-    let adverbWord = adverbs[Math.floor(Math.random()*431)];
+    let adverbWord = adverbs[Math.floor(Math.random()*429)];
     let adverbWord1 = adverbWord.slice(0, adverbWord.length / 2)
     let adverbWord2 = adverbWord.slice(adverbWord.length / 2, adverbWord.length)
     password += adverbWord1 + symbol4 + adverbWord2
 
     return password;
-    /*for (let i = 0; i < phraseLength; i++) {
-        let randomWord = Math.random()*1526;
-        password += english[Math.floor(randomWord)];
-    }
-    let random = Math.floor(Math.random()*1000);
-    password += random;
-    return password;*/
 }
   
   export default function PhraseGenerator() {
     const [result, setResult] = useState();
     const regen = () =>{
           setResult(generatePhrasePassword(3));
-      }
+    }
     return (
       <View style={styles.container}>
         <Text style={{fontFamily: 'Courier New', fontSize: 24}}>Phrase Generator</Text>
-        <Button onPress={() => regen()} title="Generate1"></Button>
-        <Text>{result}</Text>
+        <Button onPress={() => regen()} title="Generate!"></Button>
+        <Text onPress={() => Clipboard.setString(result)}>{result}</Text>
         <StatusBar style="auto" />
       </View>
     );

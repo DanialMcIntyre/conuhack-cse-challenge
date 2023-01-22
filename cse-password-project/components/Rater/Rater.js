@@ -66,7 +66,7 @@ export default function Rater() {
     let seconds = Math.pow(possibleChars, length) / keysPerSecond;
 
     let minutes = Math.floor(seconds / 60)
-    seconds = seconds % 60
+    seconds = (seconds % 60).toFixed(5)
 
     let hours = Math.floor(minutes / 60)
     minutes = minutes % 60
