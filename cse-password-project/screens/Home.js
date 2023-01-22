@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView, Button } from 'react-native';
 import { Header } from 'react-native/Libraries/NewAppScreen';
-import Title from '../components/Title';
-import Btn from '../components/Btn';
-import Generator from '../components/Generator';
+import Title from '../components/Title/Title';
+import Btn from '../components/Btn/Btn';
+import Generator from '../components/Generator/Generator';
 
 export default function Home() { 
   return (
